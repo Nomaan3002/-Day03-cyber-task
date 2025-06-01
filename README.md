@@ -1,31 +1,32 @@
 # -Day03-cyber-task
-# Day 3 – Nessus vulnerability scan of localhost (127.0.0.1) 
+# Day 3 – Vulnerability Scan Using Nessus Essentials
 
-## 🎯 Task Objective:
-Perform a basic vulnerability scan on local PC (127.0.0.1) using Nmap and identify security risks.
+## 🎯 Objective:
+Perform a local vulnerability scan using Tenable Nessus Essentials and identify system weaknesses.
 
 ## 🛠 Tool Used:
-- Nmap 7.97 with NSE Scripts (`--script vuln`)
+- Nessus Essentials (Free Version)
 
-## 📍 Target:
-- Localhost (127.0.0.1)
+## 🎯 Target Scanned:
+- 192.168.32.10 (Localhost)
 
-## 📊 Summary of Results:
+## 📊 Findings:
+- Total Vulnerabilities: 42  
+  - Medium: 3  
+  - Informational: 39
 
-| Port  | Service        | Finding                                |
-|-------|----------------|-----------------------------------------|
-| 135   | msrpc          | Open (Windows RPC)                      |
-| 445   | microsoft-ds   | Open (SMB port – no vuln confirmed)     |
-| 8000  | Splunkd HTTP   | ✅ Slowloris Attack (CVE-2007-6750)     |
-| 8089  | Splunkd HTTPS  | ⚠️ Possible CSRF Vulnerability          |
+### 🛑 Examples of Medium Risks:
+- SSL Certificate Cannot Be Trusted
+- SMB Signing Not Required
+- SSL Self-Signed Certificate
 
-## 📁 Files Included:
-- `vuln-scan.txt` → Nmap scan output
-- `vulnerability-notes.txt` → Summary & learning
-- `screenshot1.png`, `screenshot2.png` → Scan result images (if any)
+## 📂 Files Included:
+- `nessus-vulnerability-report-1.pdf`
+- `vulnerability-notes.txt`
+- `screenshot1.png`, `screenshot2.png`
+- *(Optional)* `nmap-vuln-scan.txt`
 
-## 🧠 Key Learnings:
-- Realized how open services can lead to DoS or injection flaws
-- Learned to interpret Nmap script outputs
-- Saw importance of CVEs and mitigation
-
+## 📚 Key Learnings:
+- Scanned local machine for known vulnerabilities
+- Learned to read CVSS scores and plugin IDs
+- Practiced exporting Nessus reports and documenting results
